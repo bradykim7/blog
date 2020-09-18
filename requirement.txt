@@ -1,0 +1,30 @@
+pytz==2020.1  # https://github.com/stub42/pytz
+python-slugify==4.0.1  # https://github.com/un33k/python-slugify
+Pillow==7.2.0  # https://github.com/python-pillow/Pillow
+argon2-cffi==20.1.0  # https://github.com/hynek/argon2_cffi
+redis==3.5.3  # https://github.com/andymccurdy/redis-py
+hiredis==1.1.0  # https://github.com/redis/hiredis-py
+
+# Django
+# ------------------------------------------------------------------------------
+django==3.0.9  # pyup: < 3.1  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
+django-allauth==0.42.0  # https://github.com/pennersr/django-allauth
+django-crispy-forms==1.9.2  # https://github.com/django-crispy-forms/django-crispy-forms
+django-redis==4.12.1  # https://github.com/jazzband/django-redis
+
+# Postgresql setting
+# ------------------------------------------------------------------------------
+psycopg2-binary==2.8.3  # https://github.com/psycopg/psycopg2
+# Caution) env LDFLAGS='-L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib' pip install psycopg2
+# psycopg2==2.8.5 --no-binary psycopg2  # https://github.com/psycopg/psycopg2
+
+# Code Quality
+flake8==3.8.3  # https://github.com/PyCQA/flake8
+flake8-isort==4.0.0  # https://github.com/gforcada/flake8-isort
+coverage==5.2.1  # https://github.com/nedbat/coveragepy
+black==20.8b1  # https://github.com/ambv/black
+pylint-django==2.3.0  # https://github.com/PyCQA/pylint-django
+pre-commit==2.7.1  # https://github.com/pre-commit/pre-commit
+

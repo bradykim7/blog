@@ -1,0 +1,41 @@
+{% if user.is_authenticated %}
+    <p>따무새 "{{ user.first_name }}" 님 어서오세요!</p>
+    {#    <a class="nav-link" href="{% url 'account_logout' %}" tabindex="-1">로그 아웃</a>#}
+    <p> 게시글 수 : (이곳에 쟝고 모델 연동 바람)
+    <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button class="btn btn-primary btn-sm" type="submit">로그아웃</button>
+    </form></p>
+    <form method="post" action="{% url 'create_article' %}">
+        {% csrf_token %}
+        <button style="background-color: forestgreen;width:150px"class="btn btn-primary btn-sm" type="submit">글쓰기</button>
+    </form>
+
+
+
+{% else %}
+    {% load i18n %}
+    {% load account socialaccount %}
+    {% get_providers as socialaccount_providers %}
+    {% if socialaccount_providers %}
+        {% for provider in socialaccount_providers %}
+            {% if provider.id == "openid" %}
+                {% for brand in provider.get_brands %}
+                    <a title="{{ brand.name }}"
+                       class="nav-link acitve"
+                       href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+                    >{{ brand.name }}로 로그인 하기</a>
+                {% endfor %}
+            {% endif %}
+            <a title="{{ provider.name }}" class="nav-link socialaccount_provider {{ provider.id }} active"
+               href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+                {{ provider.name }}로 로그인하기</a>
+        {% endfor %}
+    {% else %}
+    {% endif %}
+{% endif %}
+
+

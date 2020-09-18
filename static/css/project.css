@@ -1,0 +1,55 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+    color: black;
+    background-color: white;
+    border-color: #d6e9c6;
+}
+
+.alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+
+
+
+
+* {
+    font-family: 'SDMiSaeng';
+}
+
+hr.side_line {
+    border: solid 1px cornflowerblue;
+}
+
+.user_inform {
+    height: 500px;
+    background-color: white;
+    border: solid 1px black;
+
+}
+
+.sidenav {
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.sidenav a {
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+. sidenav a:hover {
+    color: #f1f1f1;
+}
+
+@font-face {
+    font-family: 'SDMiSaeng';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDMiSaeng.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

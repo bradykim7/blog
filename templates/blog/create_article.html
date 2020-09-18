@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="hidden" value="{{ user.first_name }}">
+        <div>{{ user.first_name }} and {{ user.name }}</div>
+        <button class="btn btn-primary">
+            post
+        </button>
+    </form>
+        <div class="row" style="background-color: brown">
+            제목 입력
+        </div>
+    <div class ="row" style="background-color: lightgray">
+        글쓰는 공간
+    </div>
+    </div>
+{% endblock %}

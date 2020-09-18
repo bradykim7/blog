@@ -1,0 +1,32 @@
+<li class="nav-item">
+    {% if user.is_authenticated %}
+        <li class="nav-item active">
+            <a class="nav-link" href="#" tabindex="-1">Twitch TV 사용자는 "{{ user.first_name }}"</a>
+        </li>
+{#        <li class="nav-item active">#}
+{#            <a class="nav-link" href="{% url 'account_logout' %}" tabindex="-1">로그 아웃</a>#}
+{#        </li>#}
+    {% else %}
+        {% load i18n %}
+        {% load account socialaccount %}
+        {% get_providers as socialaccount_providers %}
+        {% if socialaccount_providers %}
+            <div class="socialaccount_ballot">
+                {% for provider in socialaccount_providers %}
+                    {% if provider.id == "openid" %}
+                        {% for brand in provider.get_brands %}
+                            <a title="{{ brand.name }}"
+                               class="nav-link acitve"
+                               href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+                            >{{ brand.name }}로 로그인 하기</a>
+                        {% endfor %}
+                    {% endif %}
+                    <a title="{{ provider.name }}" class="nav-link socialaccount_provider {{ provider.id }} active"
+                       href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+                        {{ provider.name }}로 로그인하기</a>
+                {% endfor %}
+            </div>
+        {% else %}
+        {% endif %}
+    {% endif %}
+</li>

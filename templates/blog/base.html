@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %}따효니 놀이터{% endblock %}</title>
+    <!-- personal css -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicons/favicon.png' %}"/>
+
+    <!-- bootstrap stuff -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container">
+    <!-- header -->
+    <div class="row">
+        <div class="col">
+            {% include './navbar.html' %}
+            {% include './header.html' %}
+        </div>
+    </div>
+    <!-- left sidebar -->
+    <div class="row" style="background-color: ">
+        <div class="col-2">
+            <div style="text-align:center;height: auto">
+                <hr class="side_line"/>
+                {% include './left_user_inform.html' %}
+
+                <hr class="side_line"/>
+
+
+            </div>
+            <br/>
+            <div class="center" style="background-color: deeppink;height: 250px">
+                <div style="background-color: yellow; height: 250px">
+                    <div style="text-align:center;background-color: red; height: auto">
+                        <h4>게임 게시판1</h4>
+                        <hr class="side_line"/>
+
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">하스스톤</a></div>
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">룬테라</a></div>
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">황제공명전</a></div>
+                    </div>
+                    <div class="left-side-bar" style="text-align:center;background-color: red; height: auto">
+                        <h4>게임 게시판2</h4>
+                        <hr class="side_line"/>
+
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">하스스톤</a></div>
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">룬테라</a></div>
+                        <div class="leftside-a"><a style="color:cornflowerblue;text-decoration:none"
+                                                   href="#">황제공명전</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 전 체 컨 텐 츠 -->
+        <div class="col-10" style="background-color: grey">
+            <div style="background-color: mediumpurple; height: 800px">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: darkgreen">
+        <div class="col">
+            Footer
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{#<div class="container">#}
+{##}
+{#    {% include './navbar.html' %}#}
+{#    {% include './header.html' %}#}
+{##}
+{##}
+{#    <div class="row" style="background-color:gray; margin:3px 3px">#}
+{#        <div class="col-2"#}
+{#             style="border:solid 2px cornflowerblue;margin:3px 3px;background-color:cyan">#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{#                    <div class="user_inform">#}
+{#                        <a href="#about">About</a>#}
+{#                        <a href="#services">Services</a>#}
+{#                        <a href="#clients">Clients</a>#}
+{#                        <a href="#contact">Contact</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row">#}
+{#                    asdf1234#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#        first#}
+{#    </div>#}
+{##}
+{#    <div class="col" style="border:solid 2px cornflowerblue;margin:3px 3px;background-color:cyan"> Second#}
+{#        {% block content %}#}
+{##}
+{#        {% endblock %}#}
+{#    </div>#}
+{##}
+{#    <div class="row">#}
+{#        <div class="col" style="border:solid 2px cornflowerblue"> Second#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#</div>#}
+{##}
+{#</body>#}
+{#</html>#}

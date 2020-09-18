@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="background-color: lightseagreen">
+            <div class="col col-xs-2" style="border: solid 1px blue">Monday
+                <p>
+                    생방송 몇시 ~
+                </p></div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Tuesday
+                <p>공방 몇시</p></div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Wednesday</div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Thursday</div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Friday</div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Saturday</div>
+            <div class="col col-xs-2" style="border: solid 1px blue">Sunday</div>
+        </div>
+        <div class="row" style="background-color: greenyellow">
+            <div class="col-md-7" style="background-color: gold">
+                실시간 베스트 글
+            </div>
+            <div class="col-5" style="background-color: antiquewhite; margin-left:0px">
+                <div id="twitch-embed">효니는 방송중 ?</div>
+                <script src="https://embed.twitch.tv/embed/v1.js"></script>
+                <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+                <script type="text/javascript">
+                    new Twitch.Embed("twitch-embed", {
+                        width: 340,
+                        height: 200,
+                        channel: "ddahyoni",
+                        layout: 'video',
+                        muted: true,
+                        // only needed if your site is also embedded on embed.example.com and othersite.example.com
+                        parent: ["embed.example.com", "othersite.example.com"]
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="row" style="background-color: orange">
+            여기는 전체 게시판 글
+        </div>
+    </div>
+{% endblock %}
